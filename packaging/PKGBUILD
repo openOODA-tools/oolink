@@ -1,0 +1,21 @@
+# Maintainer: openOODA-tools <ops@openooda.org>
+pkgname=oolink-bin
+_pkgname=oolink
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="Single-purpose POSIX hard linker with inode verification."
+arch=('x86_64')
+url="https://github.com/openOODA-tools/oolink"
+license=('Apache-2.0')
+depends=('glibc')
+provides=('oolink')
+conflicts=('oolink')
+source_x86_64=("${url}/releases/download/v${pkgver}/oolink-linux-x86_64"
+               "uninstall.sh::https://raw.githubusercontent.com/openOODA-tools/${_pkgname}/v${pkgver}/uninstall.sh")
+sha256sums_x86_64=('SKIP'
+                   'SKIP')
+
+package() {
+    install -Dm755 "${srcdir}/oolink-linux-x86_64" "${pkgdir}/usr/bin/oolink"
+    install -Dm755 uninstall.sh "${pkgdir}/usr/bin/oolink-uninstall"
+}

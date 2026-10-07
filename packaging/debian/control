@@ -1,0 +1,14 @@
+Source: oolink
+Section: utils
+Priority: optional
+Maintainer: openOODA-tools <ops@openooda.org>
+Standards-Version: 4.6.2
+Build-Depends: debhelper-compat (= 13)
+
+Package: oolink
+Architecture: amd64
+Depends: libc6
+Description: HARD LINKER
+ Single-purpose POSIX hard linker with inode verification.
+ Capability-bounded openOODA utility with zero ambient authority,
+ oote theme palettes, and native Model Context Protocol (MCP) surface.
